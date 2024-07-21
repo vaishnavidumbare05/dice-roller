@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-roller </title>
+    <style>
+       .body{
+        margin:0%;
+        
+       }
+        .heading{
+            text-align: center;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+            color: rgb(104, 21, 13);
+            margin-top:50px;
+        }
+        .dice-container{
+            height:450px;
+            width:350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(224, 234, 234);
+            position:relative;
+            top:30px;
+            left:550px;
+            border-radius: 10px;
+        }
+       
+        .img-dice{
+            height:200px;
+            width: 200px;
+            position: absolute;
+            top:70px;
+        }
+        .btn{
+            width: 150px;
+            height:50px ;
+            position: absolute;
+            top:300px;
+            margin-top:50px;
+            padding:10px 10px;
+            border: none;
+            border-radius:15px;
+            cursor: pointer;
+            font-size: medium;
+            background-color: #096c8e;
+            color: white;
+        }
+        .btn:hover{
+            background-color: #094a5f;
+        }
+        @keyframes roll {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);  
+                }
+            }
+       
+
+        </style>
+</head>
+<body>
+    <h1 class="heading">Dice Roller</h1>
+    <div class="dice-container">
+        <img src="images\dice.png" class="img-dice" id="img-dice">
+        <button onclick="roll()" class="btn">Roll Dice</button>
+        </div>
+
+        <script>
+            function roll(){
+                const randomNumber=Math.floor(Math.random() * (7-1)) + 1
+
+                const imgElement=document.getElementById("img-dice")
+
+                switch(randomNumber)
+                {
+                 case 1:
+                 imgElement.src="images/dice1.png"
+                 break;
+                 case 2:
+                 imgElement.src="images/dice2.png"
+                 break;
+                 case 3:
+                 imgElement.src="images/dice3.png"
+                 break;
+                 case 4:
+                 imgElement.src="images/dice4.png"
+                 break;
+                 case 5:
+                 imgElement.src="images/dice5.png"
+                 break;
+                 case 6:
+                 imgElement.src="images/dice6.png"
+                 break;
+                 default:
+                    imgElement.src="images/dice.png"
+                }
+            }
+            </script>
+</body>
+</html>
